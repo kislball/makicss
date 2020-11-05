@@ -1,5 +1,21 @@
 $border-styles: dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden;
 $border-sides: left, right, top, bottom;
+$border-corners: top-left, top-right, bottom-left, bottom-right;
+
+$border-radiuses: (
+  "none": 0px,
+  "roundy": 8px,
+  "more-roundy": 32px,
+  "round": 50%
+);
+
+$border-thickness-levels: (
+  "invisible": 0px,
+  "thin": 0.5px,
+  "regular": 1px,
+  "bold": 3px,
+  "thick": 7px
+);
 
 @each $style in $border-styles {
   .border-is-#{$style} {
@@ -9,6 +25,30 @@ $border-sides: left, right, top, bottom;
   @each $side in $border-sides {
     .#{$side}-border-is-#{$style} {
       border-#{$side}-style: $style;
+    }
+  }
+}
+
+@each $name, $radius in $border-radiuses {
+  .border-is-#{$name} {
+    border-radius: $radius;
+  }
+
+  @each $corner in $border-corners {
+    .#{$corner}-radius-is-#{$name} {
+      border-#{$corner}-radius: $radius;
+    }
+  }
+}
+
+@each $name, $thickness in $border-thickness-levels {
+  .border-is-#{$name} {
+    border-width: $thickness;
+
+    @each $side in $border-sides {
+      .#{$side}-border-is-#{$name} {
+        border-#{$side}-width: $thickness;
+      }
     }
   }
 }

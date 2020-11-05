@@ -1,0 +1,54 @@
+@import '../variables/breakpoints.scss';
+
+$spacer: 1rem;
+$indents-sides: left, right, top, bottom;
+$indents-sizes: (
+  "none": 0,
+  "tiny": $spacer * .25,
+  "small": $spacer * .5,
+  "regular": $spacer,
+  "big": $spacer * 1.5,
+  "huge": $spacer * 3
+);
+
+@each $name, $size in $indents-sizes {
+  .margin-#{$name} {
+    margin: $size;
+  }
+
+  .padding-#{$name} {
+    padding: $size;
+  }
+
+  @each $side in $indents-sides {
+    .margin-#{$side}-#{$name} {
+      margin-#{$side}: $size;
+    }
+
+    .padding-#{$side}-#{$name} {
+      padding-#{$side}: $size;
+    }
+  }
+
+  @each $bp-name, $breakpoint in $breakpoints {
+    @media (max-width: $breakpoint) {
+      .margin-#{$name}-#{$bp-name} {
+        margin: $size;
+      }
+
+      .padding-#{$name}-#{$bp-name} {
+        padding: $size;
+
+        @each $side in $indents-sides {
+          .margin-#{$side}-#{$name}-#{$bp-name} {
+            margin-#{$side}: $size;
+          }
+
+          .padding-#{$side}-#{$name}-#{$bp-name} {
+            padding-#{$side}: $size;
+          }
+        }
+      }
+    }
+  }
+}
