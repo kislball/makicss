@@ -27,7 +27,7 @@ $grid-spacing: .25em;
   @each $name, $size in $breakpoints {
     @media (max-width: $size) {
       .column-#{$i}-#{$name} {
-        grid-column-start: $i;
+        grid-column-start: $i !important;
       }
     }
   }
@@ -41,8 +41,8 @@ $grid-spacing: .25em;
       @each $name, $size in $breakpoints {
         @media (max-width: $size) {
           .column-#{$i}-#{$j}-#{$name} {
-            grid-column-start: $i;
-            grid-column-end: $j;
+            grid-column-start: $i !important;
+            grid-column-end: $j !important;
           }
         }
       }
