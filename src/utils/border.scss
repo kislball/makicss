@@ -1,6 +1,13 @@
 $border-styles: dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden;
 $border-sides: left, right, top, bottom;
 
+$border-radiuses: (
+  "none": 0px,
+  "roundy": 8px,
+  "more-roundy": 32px,
+  "round": 50%
+);
+
 @each $style in $border-styles {
   .border-is-#{$style} {
     border-style: $style;
@@ -10,5 +17,11 @@ $border-sides: left, right, top, bottom;
     .#{$side}-border-is-#{$style} {
       border-#{$side}-style: $style;
     }
+  }
+}
+
+@each $name, $radius in $border-radiuses {
+  .border-is-#{$name} {
+    border-radius: $radius;
   }
 }
