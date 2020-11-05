@@ -1,0 +1,9 @@
+@import '../variables/configuration.scss';
+
+@if $use-reset == true {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}

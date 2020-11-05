@@ -1,0 +1,1 @@
+console.warn("MakiCSS does not have its own JavaScript code. Plaese, do not import it");

@@ -1,0 +1,32 @@
+{
+  "name": "makicss",
+  "version": "1.0.0",
+  "description": "A frontend framework that just exists",
+  "repository": "https://github.com/kislball/makicss",
+  "license": "MIT",
+  "author": "MakiCSS team",
+  "style": "dist/maki.css",
+  "sass": "src/maki.scss",
+  "main": "fallback.js",
+  "scripts": {
+    "build:clear": "rm -rf ./dist/*",
+    "build:scss-grid": "sass src/grid.scss dist/maki-grid.css",
+    "build:scss-utils": "sass src/utils.scss dist/maki-utils.css",
+    "build:scss-common": "sass src/maki.scss dist/maki.css",
+    "build:scss": "npm run build:scss-common && npm run build:scss-utils && npm run build:scss-grid",
+    "build:minify-grid": "cleancss dist/maki-grid.css --source-map -o dist/maki-grid.min.css",
+    "build:minify-utils": "cleancss dist/maki-utils.css --source-map -o dist/maki-utils.min.css",
+    "build:minify-common": "cleancss dist/maki.css --source-map -o dist/maki.min.css",
+    "build:minify": "npm run build:minify-common && npm run build:minify-grid && npm run build:minify-utils",
+    "build:postcss": "postcss dist/*.css -u autoprefixer -r --config postcss.config.js --no-map.inline",
+    "build": "npm run build:clear && npm run build:scss && npm run build:postcss && npm run build:minify",
+    "dev": "sass src/maki.scss dist/maki.scss --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "clean-css-cli": "^4.3.0",
+    "postcss": "^8.1.6",
+    "postcss-cli": "^8.2.0",
+    "sass": "^1.29.0"
+  }
+}

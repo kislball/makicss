@@ -1,0 +1,35 @@
+$colors: (
+  "red": #ff5555,
+  "red-darken": #ff3333,
+  "green": #55ff55,
+  "green-darken": #33ff33,
+  "blue": #5555ff,
+  "blue-darken": #3333ff,
+  "purple": #c455ab,
+  "purple-darken": #c433ab,
+  "info": #9999ff,
+  "info-darken": #7777ff,
+  "yellow": #ffff33,
+  "orange": #ffa533,
+  "white": #ffffff,
+  "light": #e5e5e5,
+  "gray": #c4c4c4,
+  "dark-gray": #7c7c7c,
+  "grey": #c4c4c4,
+  "dark-grey": #7c7c7c,
+  "dark": #4c4c4c
+);
+
+@each $color, $code in $colors {
+  .background-is-#{$color} {
+    background-color: $code;
+  }
+
+  .text-is-#{$color} {
+    color: $code;
+  }
+
+  .border-is-#{$color} {
+    border-color: $code;
+  }
+}

@@ -1,0 +1,14 @@
+$border-styles: dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden;
+$border-sides: left, right, top, bottom;
+
+@each $style in $border-styles {
+  .border-is-#{$style} {
+    border-style: $style;
+  }
+
+  @each $side in $border-sides {
+    .#{$side}-border-is-#{$style} {
+      border-#{$side}-style: $style;
+    }
+  }
+}
