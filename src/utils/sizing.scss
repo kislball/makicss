@@ -1,0 +1,33 @@
+@import '../variables/breakpoints.scss';
+
+$sizing-types: width, height;
+$sizing-sizes: (
+  "quarter": 25%,
+  "half": 50%,
+  "quarter-and-half": 75%,
+  "full": 100%,
+  "quarter-vw": 25vw,
+  "half-vw": 50vw,
+  "quarter-and-half-vw": 75vw,
+  "full-vw": 100vw,
+  "quarter-vh": 25vh,
+  "half-vh": 50vh,
+  "quarter-and-half-vh": 75vh,
+  "full-vh": 100vh
+);
+
+@each $type in $sizing-types {
+  @each $name, $size in $sizing-sizes {
+    .#{$type}-#{$name} {
+      #{$type}: #{$size};
+    }
+
+    @each $bp-name, $breakpoint in $breakpoints {
+      @media (max-width: $breakpoint) {
+        .#{$type}-#{$name}-#{$bp-name} {
+          #{$type}: #{$size};
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+@mixin active-shadow($color, $offset-x: 0, $offset-y: 0, $spread: 1.5px) {
+  box-shadow: $offset-x $offset-y 0 $spread opacify(lighten($color, 6), 0.3);
+}

@@ -1,19 +1,15 @@
-.float-left {
-  float: left;
-}
+$float-sides: left, right;
 
-.float-right {
-  float: right;
+@each $side in $float-sides {
+  .float-#{$side} {
+    float: $side;
+  }
+
+  .clear-#{$side} {
+    clear: $side;
+  }
 }
 
 .clear-both {
   clear: both;
-}
-
-.clear-left {
-  clear: left;
-}
-
-.clear-right {
-  clear: right;
 }

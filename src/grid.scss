@@ -1,16 +1,16 @@
 @import './variables/breakpoints.scss';
 @import './utils/reset.scss';
 
-$columns: 12;
-$max-container-width: 930px;
+$grid-columns: 12;
+$grid-max-container-width: 930px;
 $grid-spacing: .25em;
 
 .container {
   width: calc(100% - 30px);
-  max-width: $max-container-width;
+  max-width: $grid-max-container-width;
   .row {
     display: grid;
-    grid-template-columns: repeat($columns, 1fr);
+    grid-template-columns: repeat($grid-columns, 1fr);
     grid-gap: $grid-spacing;
   }
 }
@@ -20,7 +20,7 @@ $grid-spacing: .25em;
   max-width: 9999px;
 }
 
-@for $i from 1 through $columns {
+@for $i from 1 through $grid-columns {
   .column-#{$i} {
     grid-column-start: $i;
   }
@@ -33,7 +33,7 @@ $grid-spacing: .25em;
     }
   }
 
-  @for $j from 1 through $columns + 1 {
+  @for $j from 1 through $grid-columns + 1 {
     @if $i <= $j {
       .column-#{$i}-#{$j} {
         grid-column-start: $i;
