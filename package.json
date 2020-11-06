@@ -18,7 +18,7 @@
     "build:minify-utils": "cleancss dist/maki-utils.css --source-map -o dist/maki-utils.min.css",
     "build:minify-common": "cleancss dist/maki.css --source-map -o dist/maki.min.css",
     "build:minify": "npm-run-all --parallel build:minify-*",
-    "build:postcss": "postcss dist/*.css -u autoprefixer postcss-combine-media-query -r --config postcss.config.js --no-map.inline",
+    "build:postcss": "postcss dist/*.css -u autoprefixer postcss-combine-media-query postcss-merge-rules -r --config postcss.config.js --no-map.inline",
     "build": "npm-run-all build:clear build:scss build:postcss build:minify",
     "dev": "sass src/maki.scss dist/maki.css --watch"
   },
@@ -29,6 +29,7 @@
     "postcss": "^8.1.6",
     "postcss-cli": "^8.2.0",
     "postcss-combine-media-query": "^1.0.1",
+    "postcss-merge-rules": "^4.0.3",
     "sass": "^1.29.0"
   }
 }
