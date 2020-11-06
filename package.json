@@ -1,6 +1,6 @@
 {
   "name": "makicss",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A frontend framework that just exists",
   "repository": "https://github.com/kislball/makicss",
   "license": "MIT",
@@ -22,7 +22,8 @@
     "build:minify": "npm-run-all --parallel build:minify-*",
     "build:postcss": "postcss dist/*.css -u autoprefixer postcss-combine-media-query postcss-merge-rules -r --config postcss.config.js --no-map.inline",
     "build": "npm-run-all build:clear build:scss build:postcss build:minify",
-    "dev": "sass src/maki.scss dist/maki.css --watch"
+    "dev": "sass src/maki.scss dist/maki.css --watch",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
