@@ -62,7 +62,7 @@ $border-thickness-levels: (
 
   @each $side in $border-sides {
     .#{$side}-border-is-#{$color} {
-      border-color: $code;
+      border-#{$side}-color: $code;
     }
   }
 }
