@@ -30,8 +30,4 @@ $colors: (
   .text-is-#{$color} {
     color: $code;
   }
-
-  .border-is-#{$color} {
-    border-color: $code;
-  }
 }

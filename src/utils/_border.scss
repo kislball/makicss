@@ -1,3 +1,5 @@
+@import '../_colors.scss';
+
 $border-styles: dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden;
 $border-sides: left, right, top, bottom;
 $border-corners: top-left, top-right, bottom-left, bottom-right;
@@ -50,5 +52,11 @@ $border-thickness-levels: (
         border-#{$side}-width: $thickness;
       }
     }
+  }
+}
+
+@each $color, $code in $colors {
+  .border-is-#{$color} {
+    border-color: $code;
   }
 }
