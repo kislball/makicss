@@ -33,5 +33,10 @@
     "postcss-combine-media-query": "^1.0.1",
     "postcss-merge-rules": "^4.0.3",
     "sass": "^1.29.0"
-  }
+  },
+  "files": [
+    "dist",
+    "src",
+    "fallback.js"
+  ]
 }
