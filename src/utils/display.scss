@@ -1,6 +1,6 @@
 @import '../variables/breakpoints.scss';
 
-$displays: block, inline, inline-block, inline-table, list-item, none, run-in, table, table-caption, table-cell, table-column-group, table-column, table-footer-group, table-header-group, table-row, table-row-group;
+$displays: block, inline, inline-block, none, flex, grid, inline-grid, inline-flex;
 
 @each $display in $displays {
   .display-#{$display} {
