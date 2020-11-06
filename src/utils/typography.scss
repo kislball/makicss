@@ -1,0 +1,79 @@
+@import '../variables/breakpoints.scss';
+
+$typo-base: 24px;
+$typo-sizes: (
+  "h1": $typo-base * 1.7,
+  "h2": $typo-base * 1.5,
+  "h3": $typo-base * 1.3,
+  "h4": $typo-base,
+  "h5": $typo-base * 0.9,
+  "h6": $typo-base * 0.7,
+  "display-1": $typo-base * 3.5,
+  "display-2": $typo-base * 3,
+  "display-3": $typo-base * 2.5,
+  "display-4": $typo-base * 2
+);
+$typo-styles: italic, normal;
+$typo-aligns: center, left, right;
+
+@each $name, $size in $typo-sizes {
+  .#{$name} {
+    font-size: $size;
+  }
+
+  @each $bp-name, $breakpoint in $breakpoints {
+    @media (max-width: $breakpoint) {
+      .#{$name}-#{$bp-name} {
+        font-size: $size;
+      }
+    }
+  }
+}
+
+@each $style in $typo-styles {
+  .text-is-#{$style} {
+    font-style: $style;
+  }
+}
+
+@each $align in $typo-aligns {
+  .text-is-#{$align} {
+    text-align: $align;
+  }
+
+  @each $bp-name, $breakpoint in $breakpoints {
+    @media (max-width: $breakpoint) {
+      .text-is-#{$align}-#{$bp-name} {
+        text-align: $align;
+      }
+    }
+  }
+}
+
+.text-is-wrapped {
+  word-break: break-all;
+}
+
+.text-is-not-wrapped {
+  word-break: keep-all;
+}
+
+.text-is-lowercase {
+  text-transform: lowercase;
+}
+
+.text-is-uppercase {
+  text-transform: uppercase;
+}
+
+.text-is-capitalized {
+  text-transform: capitalize;
+}
+
+.text-is-underlined {
+  text-decoration: underline;
+}
+
+.text-is-crossed {
+  text-decoration: line-through;
+}
