@@ -1,4 +1,4 @@
-$colors: (
+$maki-colors: (
   "red": #ff5555,
   "red-darken": #ff3333,
   "green": #55ff55,
@@ -22,12 +22,19 @@ $colors: (
   "transparent": transparent
 );
 
-@each $color, $code in $colors {
+:root {
+  @each $color, $code in $maki-colors {
+    --maki-#{$color}: #{$code};
+  }
+}
+
+
+@each $color, $code in $maki-colors {
   .background-is-#{$color} {
-    background-color: $code;
+    background-color: var(--maki-#{$color});
   }
 
   .text-is-#{$color} {
-    color: $code;
+    color: var(--maki-#{$color});
   }
 }
