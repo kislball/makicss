@@ -32,8 +32,8 @@ import 'makicss/dist/maki-utils.min.css'
 
 
 // for scss
-import 'makicss/src/maki-grid.scss';
-import 'makicss/src/maki-utils.scss';
+import 'makicss/src/grid.scss';
+import 'makicss/src/utils.scss';
 ```
 ## Building
 MakiCSS uses npm scripts for building in favour of Webpack, Parcel etc.  
