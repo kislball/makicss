@@ -55,14 +55,14 @@ $border-thickness-levels: (
   }
 }
 
-@each $color, $code in $colors {
+@each $color, $code in $maki-colors {
   .border-is-#{$color} {
-    border-color: $code;
+    border-color: var(--maki-#{$color});
   }
 
   @each $side in $border-sides {
     .#{$side}-border-is-#{$color} {
-      border-#{$side}-color: $code;
+      border-#{$side}-color: var(--maki-#{$color});
     }
   }
 }
