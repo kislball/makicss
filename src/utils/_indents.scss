@@ -13,24 +13,24 @@ $indents-sizes: (
 );
 
 @each $name, $size in $indents-sizes {
-  .margin-#{$name} {
+  .margin-is-#{$name} {
     margin: $size;
   }
 
   @if $name != 'auto' {
-    .padding-#{$name} {
+    .padding-is-#{$name} {
       padding: $size;
     }
   }
 
 
   @each $side in $indents-sides {
-    .margin-#{$side}-#{$name} {
+    .margin-is-#{$side}-#{$name} {
       margin-#{$side}: $size;
     }
 
     @if $name != 'auto' {
-      .padding-#{$side}-#{$name} {
+      .padding-is-#{$side}-#{$name} {
         padding-#{$side}: $size;
       }
     }
@@ -38,22 +38,22 @@ $indents-sizes: (
 
   @each $bp-name, $breakpoint in $breakpoints {
     @media (max-width: $breakpoint) {
-      .margin-#{$name}-#{$bp-name} {
+      .margin-is-#{$name}-#{$bp-name} {
         margin: $size;
       }
 
       @if $name != 'auto' {
-        .padding-#{$name}-#{$bp-name} {
+        .padding-is-#{$name}-#{$bp-name} {
           padding: $size;
         }
       }
 
       @each $side in $indents-sides {
-        .margin-#{$side}-#{$name}-#{$bp-name} {
+        .margin-#{$side}-is-#{$name}-#{$bp-name} {
           margin-#{$side}: $size;
         }
         @if $name != 'auto' {
-          .padding-#{$side}-#{$name}-#{$bp-name} {
+          .padding-#{$side}-is-#{$name}-#{$bp-name} {
             padding-#{$side}: $size;
           }
         }

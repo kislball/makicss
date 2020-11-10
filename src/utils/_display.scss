@@ -3,13 +3,13 @@
 $displays: block, inline, inline-block, none, flex, grid, inline-grid, inline-flex;
 
 @each $display in $displays {
-  .display-#{$display} {
+  .display-as-#{$display} {
     display: $display;
   }
 
   @each $name, $size in $breakpoints {
     @media (max-width: $size) {
-      .display-#{$display}-#{$name} {
+      .display-as-#{$display}-#{$name} {
         display: $display;
       }
     }

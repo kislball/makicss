@@ -18,13 +18,13 @@ $sizing-sizes: (
 
 @each $type in $sizing-types {
   @each $name, $size in $sizing-sizes {
-    .#{$type}-#{$name} {
+    .#{$type}-is-#{$name} {
       #{$type}: #{$size};
     }
 
     @each $bp-name, $breakpoint in $breakpoints {
       @media (max-width: $breakpoint) {
-        .#{$type}-#{$name}-#{$bp-name} {
+        .#{$type}-is-#{$name}-#{$bp-name} {
           #{$type}: #{$size};
         }
       }
