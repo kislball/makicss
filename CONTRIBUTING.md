@@ -42,4 +42,4 @@ Repository has two branches: `master` and `dev`. All contributions should go to 
 ### Commit style
 Commits are following this schema:
 `[PREFIX] {what have you changed}`
-Available prefixes: `UTILS`, `GRID`, `STYLE`, `BUILD`, `README`
+Available prefixes: `UTILS`, `GRID`, `STYLE`, `BUILD`, `README`, `RELEASE`
