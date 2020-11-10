@@ -1,5 +1,5 @@
 # MakiCSS
-> Utility-first rontend framework that just exists
+> Utility-first frontend framework that just exists
 ## Warning 
 **This project is under development, not production ready**
 ## Usage
