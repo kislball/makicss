@@ -5,18 +5,18 @@ $border-sides: left, right, top, bottom;
 $border-corners: top-left, top-right, bottom-left, bottom-right;
 
 $border-radiuses: (
-  "none": 0px,
-  "roundy": 8px,
-  "more-roundy": 32px,
-  "round": 50%
+  'none': 0px,
+  'roundy': 8px,
+  'more-roundy': 32px,
+  'round': 50%
 );
 
 $border-thickness-levels: (
-  "invisible": 0px,
-  "thin": 0.5px,
-  "regular": 1px,
-  "bold": 3px,
-  "thick": 7px
+  'invisible': 0px,
+  'thin': 0.5px,
+  'regular': 1px,
+  'bold': 3px,
+  'thick': 7px
 );
 
 @each $style in $border-styles {
